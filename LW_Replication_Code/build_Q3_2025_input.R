@@ -132,30 +132,4 @@ cat("  Total rows:", nrow(updated_data), "\n\n")
 cat("Q3 2025 row:\n")
 print(new_row)
 
-cat("\n=== VALIDATION CHECKS ===\n")
-cat("GDP log - Q3 2025:", round(gdp_log_q3, 6), "\n")
-cat("  Recent range (Q1 2024 - Q2 2025):", round(min(tail(existing$gdp.log, 6)), 6), 
-    "to", round(max(tail(existing$gdp.log, 6)), 6), "\n")
-cat("  Status:", ifelse(gdp_log_q3 >= min(tail(existing$gdp.log, 6)) & 
-                         gdp_log_q3 <= max(tail(existing$gdp.log, 6)) + 0.05, 
-                         "✓ Within expected range", "⚠ Outside expected range"), "\n\n")
-
-cat("Inflation - Q3 2025:", inflation_q3, "%\n")
-cat("  Recent range (Q1 2024 - Q2 2025):", round(min(tail(existing$inflation, 6)), 2), 
-    "to", round(max(tail(existing$inflation, 6)), 2), "%\n")
-cat("  Status:", ifelse(inflation_q3 >= 1.5 & inflation_q3 <= 5, 
-                         "✓ Within reasonable range", "⚠ Outside reasonable range"), "\n\n")
-
-cat("Interest rate - Q3 2025:", ff_q3_2025, "%\n")
-cat("  Recent range (Q1 2024 - Q2 2025):", round(min(tail(existing$interest, 6)), 2), 
-    "to", round(max(tail(existing$interest, 6)), 2), "%\n")
-cat("  Status:", ifelse(ff_q3_2025 >= 3 & ff_q3_2025 <= 6, 
-                         "✓ Within reasonable range", "⚠ Outside reasonable range"), "\n\n")
-
-cat("Inflation expectations - Q3 2025:", round(infexp_q3_avg, 4), "%\n")
-cat("  Recent range (Q1 2024 - Q2 2025):", round(min(tail(existing$inflation.expectations, 6)), 2), 
-    "to", round(max(tail(existing$inflation.expectations, 6)), 2), "%\n")
-cat("  Status:", ifelse(infexp_q3_avg >= 1.5 & infexp_q3_avg <= 4, 
-                         "✓ Within reasonable range", "⚠ Outside reasonable range"), "\n\n")
-
 cat("\n=== BUILD COMPLETE ===\n")
