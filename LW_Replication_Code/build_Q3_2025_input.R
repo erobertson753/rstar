@@ -17,17 +17,16 @@ cat("Date format in existing data:", head(existing$Date, 3), "\n\n")
 
 cat("Extracting Q3 2025 data from source files...\n")
 
-# 1. GDP (GDPC1) - Latest available is Q2 2025
-gdp_data <- read.csv("LW_2023_Replication_Code/inputData/GDPC1.csv", stringsAsFactors = FALSE)
-gdp_q2_2025 <- gdp_data[gdp_data$observation_date == "2025-04-01", "GDPC1"]
-gdp_q1_2025 <- gdp_data[gdp_data$observation_date == "2025-01-01", "GDPC1"]
-cat("  GDP Q2 2025:", gdp_q2_2025, "\n")
-cat("  GDP Q1 2025:", gdp_q1_2025, "\n")
+# 1. GDP (GDPC1) - Latest available is Q2 2025 
+gdp_data <- read.csv("LW_2023_Replication_Code/inputData/GDPC1.csv", stringsAsFactors = FALSE) 
+gdp_q2_2025 <- gdp_data[gdp_data$observation_date == "2025-04-01", "GDPC1"] 
+cat(" GDP Q2 2025:", gdp_q2_2025, "\n") 
 
-# Project Q3 2025 GDP using recent growth rate
-gdp_growth_rate <- (gdp_q2_2025 / gdp_q1_2025) - 1
-gdp_q3_2025_projected <- gdp_q2_2025 * (1 + gdp_growth_rate)
-cat("  GDP Q3 2025 (projected):", round(gdp_q3_2025_projected, 2), "\n")
+# Project Q3 2025 GDP using Philadelphia Fed’s Survey of Professional Forecasters (1.3% annualized rate) 
+gdp_growth_rate_q3 <- 0.013 / 4 
+# convert annualized rate to quarterly 
+gdp_q3_2025_projected <- gdp_q2_2025 * (1 + gdp_growth_rate_q3) 
+cat("GDP Q3 2025 (projected):", round(gdp_q3_2025_projected, 2), "\n")
 
 # 2. CPI YoY inflation
 cpi <- read.csv("LW_2023_Replication_Code/inputData/cpi_yoy.csv", skip=5, stringsAsFactors = FALSE)
