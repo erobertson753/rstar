@@ -1,0 +1,57 @@
+MIT License
+
+Copyright (c) 2025 [Your Name]
+
+IMPORTANT NOTICE:
+This repository contains code originally developed by the Federal Reserve Bank of 
+New York for the Laubach-Williams (2003) natural rate of interest estimation model. 
+The core estimation algorithms and methodology are the intellectual property of the 
+Federal Reserve Bank of New York and are used here for research and educational 
+purposes.
+
+Original Code Source:
+Federal Reserve Bank of New York
+"Laubach-Williams Replication Code"
+https://www.newyorkfed.org/research/policy/rstar
+
+The following files are UNCHANGED from the official NY Fed code:
+- All files in LW_Replication_Code/ except run_production_Q3_2025.R
+- Core estimation functions: rstar.stage*.R, kalman.*.R, median.unbiased.estimator.*.R
+- Supporting functions: calculate.covariance.R, format.output.R, utilities.R, etc.
+
+Original Methodology:
+Laubach, T., & Williams, J. C. (2003). "Measuring the Natural Rate of Interest." 
+Review of Economics and Statistics, 85(4), 1063-1070.
+
+Modifications in This Repository:
+- Data input/output scripts (build_Q3_2025_input.R, run_production_Q3_2025.R)
+- Visualization scripts (create_comprehensive_rstar_graph.R, etc.)
+- Documentation (README.md, METHODOLOGY_AND_CHANGES.md)
+- Extension of estimates to Q3 2025
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+DISCLAIMER:
+This repository is for research and educational purposes only. The estimates 
+produced are not official Federal Reserve estimates and should not be used for 
+policy decisions. For official r* estimates, please refer to:
+https://www.newyorkfed.org/research/policy/rstar
+
+The Federal Reserve Bank of New York does not endorse or take responsibility 
+for any modifications, extensions, or interpretations made in this repository.
